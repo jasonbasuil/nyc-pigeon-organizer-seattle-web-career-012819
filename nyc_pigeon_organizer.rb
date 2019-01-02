@@ -11,7 +11,19 @@ def nyc_pigeon_organizer(data)
         if pigeon_list[pigeon_name][key] == nil 
           pigeon_list[pigeon_name][key] = []
       end 
-      
+      recorded = false 
+      pigeon_list[pigeon_name][key].each do |attribute|
+        if attribute == nested_key.to_s
+          recorded = true 
+        end 
+      end 
+      if recorded == false 
+        pigeon_list[pigeon_name][key] << nested_key.to_s 
+      end 
     end 
+  end 
+end 
+pigeon_list
+end 
     
    
